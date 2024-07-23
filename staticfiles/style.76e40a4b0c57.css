@@ -1,0 +1,12 @@
+/* css/style.css */
+
+body {
+    background-color: #f0f0f0;  /* Light gray background */
+    font-family: Arial, sans-serif;  /* Default font */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333;  /* Dark gray text color for headings */
+}

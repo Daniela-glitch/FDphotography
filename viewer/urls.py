@@ -16,6 +16,8 @@ urlpatterns = [
     path('Blog/', views.Blog, name='Blog'),
     path('login/', CustomLoginView.as_view(), name='login'),
     path('admin/', admin.site.urls),
-
-    # Add other paths here
+    path('process-payment/', views.process_payment, name='process_payment'),
+    path('create-checkout-session/', views.create_checkout_session, name='create_checkout_session'),
+    path('payment-success/', views.payment_success, name='payment_success'),
+    path('payment-error/', views.payment_error, name='payment_error'),
 ]
