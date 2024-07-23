@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <h1>{{ album.title }}</h1>
+  <p>{{ album.description }}</p>
+  <div class="row">
+    {% for photo in album.photos.all %}
+    <div class="col-md-3">
+      <a href="{% url 'post_detail' photo.id %}">
+        <img src="{{ photo.image.url }}" alt="{{ photo.title }}" style="width: 15%; height: auto; cursor: pointer;">
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

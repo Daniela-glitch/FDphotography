@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Page</title>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <h1>Redirecting to payment...</h1>
+    <script type="text/javascript">
+        var stripe = Stripe('your-publishable-key-here');  // Replace with your actual public key
+
+        // Get the session ID from the server
+        fetch('/create-checkout-session/')
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(sessionId) {
+                return stripe.redirectToCheckout({ sessionId: sessionId });
+            })
+            .then(function(result) {
+                if (result.error) {
+                    alert(result.error.message);
+                }
+            });
+    </script>
+</body>
+</html>

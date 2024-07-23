@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %} <!-- Ensure this line is included -->
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/album_list.css' %}">
+<div class="container">
+  <h1>Albums</h1>
+</div>
+<ul class="album-list">
+  {% for album in albums %}
+  <li>
+    <a href="{% url 'album_detail' album_id=album.id %}">{{ album.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,94 @@
+/* css/style.css */
+
+body {
+    background-color: #f0f0f0; /* Light gray background */
+    font-family: 'Raleway', sans-serif; /* Default font */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333; /* Dark gray text color for headings */
+}
+
+.post-image {
+    max-width: 100%; /* Ensure the image does not exceed its container width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the image is a block element */
+    margin: 0 auto; /* Center the image horizontally */
+    max-height: 700px; /* Limit the maximum height of the image */
+    image-rendering: crisp-edges; /* Improve image quality */
+    image-rendering: -webkit-optimize-contrast; /* Safari-specific */
+    image-rendering: pixelated; /* Improve image quality */
+    cursor: zoom-in; /* Change cursor to indicate zoom functionality */
+}
+
+.thumbnail {
+    width: 15%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 20%;
+    height: 20%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.modal-image {
+    width: 20%;
+    height: auto;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Ensure consistent link styling in style.css */
+a {
+    text-decoration: none; /* Remove underline */
+    color: #040514; /* Initial link color */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for color and background */
+    padding: 5px 10px; /* Add padding for better click area */
+    border-radius: 4px; /* Rounded corners for visual effect */
+}
+
+a:hover {
+    color: #fff; /* Change text color to white on hover */
+    background-color: #B9D9EB; /* Light blue background on hover */
+}
+
+a:active {
+    color: #fff; /* Maintain white text color when clicked */
+    background-color: #B9D9EB; /* Light blue background when clicked */
+}
