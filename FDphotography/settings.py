@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-x*y=$u(-ljc^2&0r)v0t-tpupy3b#-f-b7p-e8&gek-xj4050g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['deconstructingview.com', 'www.deconstructingview.com', '127.0.0.1',]
 
 
 # Application definition
@@ -79,9 +79,14 @@ WSGI_APPLICATION = 'FDphotography.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'decoacsb_Daniela',
+        'USER': 'decoacsb_Daniela',
+        'PASSWORD': 'Santorini123.',
+        'HOST': '127.0.0.1', 
+        'PORT': '3306',
     }
+
 }
 
 
@@ -136,18 +141,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/photos/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'photos')
 
-LOGIN_REDIRECT_URL = 'dashboard'
-
 import os
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
 load_dotenv()
 
-# Stripe keys
-STRIPE_TEST_PUBLIC_KEY = os.getenv('STRIPE_TEST_PUBLIC_KEY')
-STRIPE_TEST_SECRET_KEY = os.getenv('STRIPE_TEST_SECRET_KEY')
+PAYPAL_MODE = os.getenv('PAYPAL_MODE', 'sandbox')
+PAYPAL_CLIENT_ID = os.getenv('PAYPAL_CLIENT_ID')
+PAYPAL_CLIENT_SECRET = os.getenv('PAYPAL_CLIENT_SECRET')
 
-# Make sure you have these keys in your settings file for your views to use
-import stripe
-stripe.api_key = STRIPE_TEST_SECRET_KEY
+import paypalrestsdk
+
+paypalrestsdk.configure({
+    "mode": os.getenv('PAYPAL_MODE', 'sandbox'),  # 'sandbox' or 'live'
+    "client_id": os.getenv('PAYPAL_CLIENT_ID'),
+    "client_secret": os.getenv('PAYPAL_CLIENT_SECRET')
+})

@@ -1,0 +1,46 @@
+
+.container {
+    padding: 20px;
+}
+
+.container h1 {
+    font-family: 'Raleway', sans-serif;
+    color: #040514; /* Title color */
+    margin-bottom: 20px;
+}
+
+.container p {
+    font-family: 'Raleway', sans-serif;
+    color: #666; /* Description color */
+    margin-bottom: 20px;
+}
+
+.container .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.container .col-md-3 a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.container .col-md-3 img {
+    width: 80%;
+    height: auto;
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container .col-md-3 a:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

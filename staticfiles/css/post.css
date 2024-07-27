@@ -1,4 +1,53 @@
+/* Styles for headings */
 h2 {
- text-align: center;
- font-family: 'Raleway', sans-serif;
+    margin: 0; /* Remove default margin around h2 */
+    font-size: 2.3em; /* Adjust font size as needed */
+    margin-bottom: 10px; /* Space between h2 and the button */
+    text-align: left; /* Align text to the left within its container */
+}
+
+.price-heading {
+    font-size: 1.2em; /* Adjust size as needed */
+}
+
+/* Styles for post images */
+img {
+    max-width: 100%; /* Increase this value to make the image larger */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the image is treated as a block element */
+    margin-bottom: 10px; /* Space below the image */
+}
+
+/* Container for post image and info */
+.post-container {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px; /* Space between image and text/button */
+    flex-wrap: wrap; /* Allow wrapping to prevent overlap */
+}
+
+/* Ensure that post image and info don't overlap */
+.post-image-container,
+.post-info {
+    flex: 1; /* Allow containers to grow equally */
+}
+
+/* Styles for the button */
+#use-picture-button {
+    background-color: #040514; /* Dark background */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 10px; /* Space above the button */
+}
+
+#use-picture-button:hover {
+    background-color: #B9D9EB; /* Light background on hover */
+}
+
+/* Protecting images */
+img {
+    pointer-events: none; /* Disable all mouse events (including clicks) on images */
 }

@@ -1,7 +1,8 @@
 <!-- templates/blog.html -->
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
 <div class="container">
     <h1>Blog</h1>
     {% for post in blog_posts %}
@@ -10,7 +11,7 @@
         {% if post.image %}
         <img src="{{ post.image.url }}" alt="{{ post.title }}">
         {% endif %}
-        <p>{{ post.content }}</p>
+        <p>{{ post.content|linebreaksbr }}</p>
     </div>
     {% endfor %}
 </div>

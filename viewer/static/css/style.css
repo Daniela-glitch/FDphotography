@@ -1,10 +1,16 @@
-/* css/style.css */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 
 body {
     background-color: #f0f0f0; /* Light gray background */
     font-family: 'Raleway', sans-serif; /* Default font */
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -12,16 +18,15 @@ h1 {
 }
 
 .post-image {
-    max-width: 100%; /* Ensure the image does not exceed its container width */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Ensure the image is a block element */
-    margin: 0 auto; /* Center the image horizontally */
-    max-height: 700px; /* Limit the maximum height of the image */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    max-height: 700px;
     image-rendering: crisp-edges; /* Improve image quality */
-    image-rendering: -webkit-optimize-contrast; /* Safari-specific */
+    image-rendering: -webkit-optimize-contrast;
     image-rendering: pixelated; /* Improve image quality */
-    cursor: zoom-in; /* Change cursor to indicate zoom functionality */
-}
+    cursor: zoom-in;
 
 .thumbnail {
     width: 15%;

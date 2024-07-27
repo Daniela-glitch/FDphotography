@@ -6,31 +6,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <title>{% block title %}TORI{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>{% block title %}TORI{% endblock %}</title>
 </head>
 <body>
-    <header>
-        <h1 class="title">TORI's</h1>
-        <nav>
-            <ul class="navbar">
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'albums' %}">Albums</a></li>
-                <li><a href="{% url 'About' %}">About</a></li>
-                <li><a href="{% url 'Contact' %}">Contact</a></li>
-                <li><a href="{% url 'Blog' %}">Blog</a></li>
-                <li><a href="{% url 'login' %}">Login</a></li>
-                <!-- Add other navigation links here -->
-            </ul>
-        </nav>
-    </header>
-    <main>
-        {% block content %}
-        <!-- Content will be injected here -->
-        {% endblock %}
-    </main>
-    <footer>
-        <p>&copy; 2024 My Site</p>
-    </footer>
+    <div class="wrapper">
+        <header>
+            <h1 class="title">FLAMUR DARDESHI PHOTOGRAPHY</h1>
+            <nav>
+                <ul class="navbar">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'albums' %}">Albums</a></li>
+                    <li><a href="{% url 'About' %}">About</a></li>
+                    <li><a href="{% url 'Contact' %}">Contact</a></li>
+                    <li><a href="{% url 'Blog' %}">Blog</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer>
+            <p>&copy; 2024 My Site</p>
+            <a href="{% url 'login' %}" class="footer-login">Login</a>
+        </footer>
+    </div>
 </body>
 </html>

@@ -13,8 +13,9 @@ header {
     text-align: center;
 }
 
+
 .title {
-    color: white;
+    color: #B9D9EB;
     text-align: center;
     background-color: #040514; /* Dark blue background for title */
 }
@@ -41,11 +42,19 @@ h1 {
     color: #fff; /* White text color for navbar links */
     text-decoration: none; /* Remove underline from links */
     font-weight: bold; /* Bold font for navbar links */
-    transition: color 0.3s ease; /* Smooth color transition */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth color transition */
+    padding: 5px 10px; /* Add padding for better click area */
+    border-radius: 4px; /* Rounded corners for visual effect */
 }
 
 .navbar a:hover {
-    color: #4f7d82; /* Change color on hover */
+    color: #fff; /* Maintain white text color on hover */
+    background-color: #B9D9EB; /* Light blue background on hover */
+}
+
+.navbar a:active {
+    color: #fff; /* Maintain white text color on click */
+    background-color: #B9D9EB; /* Light blue background on click */
 }
 
 main {
@@ -53,8 +62,26 @@ main {
 }
 
 footer {
-    background-color: #040514; /* Dark blue footer background */
-    color: #fff; /* White text color for footer */
+    position: relative; /* Ensure footer is the positioning context for the login button */
+    background-color: #040514; /* Dark background color */
+    color: white; /* White text color for footer */
     text-align: center;
     padding: 1em 0;
+}
+
+.footer-login {
+    position: absolute;
+    right: 20px; /* Position from the right edge */
+    bottom: 20px; /* Position from the bottom edge */
+    font-size: 14px;
+    font-weight: bold;
+    color: white; /* Text color for the button */
+    text-decoration: none;
+    background-color: #040514; /* Background color for the button */
+    padding: 8px 12px; /* Padding inside the button */
+    border-radius: 4px; /* Rounded corners for the button */
+}
+
+.footer-login:hover {
+    background-color: #B9D9EB; /* Change background color on hover */
 }

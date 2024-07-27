@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% load static %}
 
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/album_detail.css' %}">
 <div class="container">
   <h1>{{ album.title }}</h1>
   <p>{{ album.description }}</p>
@@ -9,7 +11,7 @@
     {% for photo in album.photos.all %}
     <div class="col-md-3">
       <a href="{% url 'post_detail' photo.id %}">
-        <img src="{{ photo.image.url }}" alt="{{ photo.title }}" style="width: 15%; height: auto; cursor: pointer;">
+        <img src="{{ photo.image.url }}" alt="{{ photo.title }}" style="width: 100%; height: auto; cursor: pointer;">
       </a>
     </div>
     {% endfor %}

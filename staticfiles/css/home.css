@@ -1,0 +1,116 @@
+/* Basic reset for the slide container */
+.slide-container {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Adjust height as needed */
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+/* Style for each slide */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all 1s ease-in-out;
+  display: flex;
+  align-items: center; /* Center the image vertically */
+  justify-content: center; /* Center the image horizontally */
+  overflow: hidden; /* Ensure content doesn't overflow */
+  z-index: 1; /* Ensure slides are above the watermark */
+}
+
+.slide.active {
+  left: 0;
+}
+
+.slide img {
+  max-width: 120%;
+  max-height: 120%;
+  object-fit: cover; /* Ensures image covers the container without distortion */
+  pointer-events: none; /* Disable mouse interactions like right-click */
+  z-index: 2; /* Ensure images are above the watermark */
+}
+
+/* Navigation buttons */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #040514;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+}
+
+.nav-button.prev {
+  left: 10px;
+}
+
+.nav-button.next {
+  right: 10px;
+}
+
+.nav-button:hover {
+  transform: translateY(-50%) scale(1.5); /* Slightly scale up on hover */
+  opacity: 0.8; /* Reduce opacity on hover for effect */
+}
+
+/* Add CSS rules to prevent image download and protect content */
+img {
+  -webkit-user-select: none; /* Disable text selection on WebKit browsers */
+  -moz-user-select: none; /* Disable text selection on Mozilla browsers */
+  -ms-user-select: none; /* Disable text selection on Microsoft browsers */
+  user-select: none; /* Disable text selection */
+}
+
+img {
+  pointer-events: none; /* Disable all mouse events on images */
+}
+
+/* Optional: Add a watermark or overlay to deter screenshots */
+.slide::after {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2px 5px;
+  border-radius: 5px;
+  pointer-events: none; /* Ensure watermark doesn't interfere with interaction */
+  z-index: 0; /* Ensure watermark is below the images */
+}
+
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px; /* Reduced padding */
+    background: #040514
+    color: #fff;
+    min-height: 200px; /* Adjust height as needed */
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    max-width: 500px;
+    margin: 0 auto;
+}

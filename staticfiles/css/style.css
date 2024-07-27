@@ -1,26 +1,32 @@
-/* css/style.css */
-
-body {
-    background-color: #f0f0f0;  /* Light gray background */
-    font-family: 'Raleway', sans-serif;  /* Default font */
+html, body {
+    height: 100%; /* Ensure the body and html take up the full viewport height */
     margin: 0;
     padding: 0;
 }
 
+
+body {
+    background-color: #f0f0f0; /* Light gray background */
+    font-family: 'Raleway', sans-serif; /* Default font */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure the border is included in the total width and height */
+}
+
 h1 {
-    color: #333;  /* Dark gray text color for headings */
+    color: #333; /* Dark gray text color for headings */
 }
 
 .post-image {
-  max-width: 100%;         /* Ensure the image does not exceed its container width */
-  height: auto;            /* Maintain aspect ratio */
-  display: block;          /* Ensure the image is a block element */
-  margin: 0 auto;          /* Center the image horizontally */
-  max-height: 700px;       /* Limit the maximum height of the image */
-  image-rendering: crisp-edges;  /* Improve image quality */
-  image-rendering: -webkit-optimize-contrast; /* Safari-specific */
-  image-rendering: pixelated; /* Improve image quality */
-  cursor: zoom-in;         /* Change cursor to indicate zoom functionality */
+    max-width: 100%; /* Ensure the image does not exceed its container width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the image is a block element */
+    margin: 0 auto; /* Center the image horizontally */
+    max-height: 700px; /* Limit the maximum height of the image */
+    image-rendering: crisp-edges; /* Improve image quality */
+    image-rendering: -webkit-optimize-contrast; /* Safari-specific */
+    image-rendering: pixelated; /* Improve image quality */
+    cursor: zoom-in; /* Change cursor to indicate zoom functionality */
 }
 
 .thumbnail {
@@ -72,4 +78,23 @@ h1 {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Ensure consistent link styling in style.css */
+a {
+    text-decoration: none; /* Remove underline */
+    color: #040514; /* Initial link color */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for color and background */
+    padding: 5px 10px; /* Add padding for better click area */
+    border-radius: 4px; /* Rounded corners for visual effect */
+}
+
+a:hover {
+    color: #fff; /* Change text color to white on hover */
+    background-color: #B9D9EB; /* Light blue background on hover */
+}
+
+a:active {
+    color: #fff; /* Maintain white text color when clicked */
+    background-color: #B9D9EB; /* Light blue background when clicked */
 }

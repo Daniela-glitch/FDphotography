@@ -1,9 +1,8 @@
-/* album_list.css */
-
 /* Style for the list items within the album list */
 ul.album-list {
     list-style-type: none; /* Remove default bullet points */
     padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
 }
 
 ul.album-list li {
@@ -14,29 +13,22 @@ ul.album-list li {
 /* Link styling within the album list */
 ul.album-list a {
     text-decoration: none; /* Remove underline */
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif; /* Use Raleway font */
     color: #040514; /* Initial link color */
-    transition: color 0.1s ease; /* Smooth transition for color change */
+    transition: color 0.1s ease, background-color 0.1s ease; /* Smooth transition for color and background */
+    display: inline-block; /* Ensure padding and background work as expected */
+    padding: 5px 10px; /* Add padding for a better click area */
+    border-radius: 4px; /* Rounded corners for better visual effect */
 }
 
-/* Hover effect within the album list */
-ul.album-list a:hover {
-    color: #040514; /* Maintain initial color on hover */
-}
-
-/* Active state (when clicking or tapping) within the album list */
+/* Hover and active effect within the album list */
+ul.album-list a:hover,
 ul.album-list a:active {
-    color: #808080; /* Change text color on click/tap */
-    background: transparent; /* Ensure no background */
-    text-decoration: none; /* Ensure no underline */
+    color: #040514; /* Maintain initial text color */
+    background-color: #B9D9EB; /* Light blue background for hover and active states */
 }
 
 /* Visited links within the album list */
 ul.album-list a:visited {
-    color: #8A9A5B; /* Maintain color for visited links */
-}
-
-/* Ensure the navbar is not affected */
-.navbar a {
-    color: #fff; /* Ensure navbar links remain white */
+    color: #040514; /* Maintain initial color for visited links */
 }

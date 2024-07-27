@@ -1,10 +1,9 @@
-/* base.css */
 
 body {
     font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0; /* Set background color for the body */
+    background-color: #f0f0f0;
 }
 
 header {
@@ -13,8 +12,9 @@ header {
     text-align: center;
 }
 
+
 .title {
-    color: white;
+    color: #B9D9EB;
     text-align: center;
     background-color: #040514; /* Dark blue background for title */
 }
@@ -25,7 +25,7 @@ h1 {
 }
 
 .navbar {
-    list-style: none; /* Remove default list styling */
+    list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
@@ -34,26 +34,26 @@ h1 {
 }
 
 .navbar li {
-    margin: 0 15px; /* Space between navbar items */
+    margin: 0 15px;
 }
 
 .navbar a {
-    color: #fff; /* White text color for navbar links */
-    text-decoration: none; /* Remove underline from links */
-    font-weight: bold; /* Bold font for navbar links */
-    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth color transition */
-    padding: 5px 10px; /* Add padding for better click area */
-    border-radius: 4px; /* Rounded corners for visual effect */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 4px;
 }
 
 .navbar a:hover {
-    color: #fff; /* Maintain white text color on hover */
-    background-color: #B9D9EB; /* Light blue background on hover */
+    color: #fff;
+    background-color: #B9D9EB;
 }
 
 .navbar a:active {
-    color: #fff; /* Maintain white text color on click */
-    background-color: #B9D9EB; /* Light blue background on click */
+    color: #fff;
+    background-color: #B9D9EB;
 }
 
 main {
@@ -61,8 +61,26 @@ main {
 }
 
 footer {
-    background-color: #040514; /* Dark blue footer background */
-    color: #fff; /* White text color for footer */
+    position: relative;
+    background-color: #040514; /* Dark background color */
+    color: white;
     text-align: center;
     padding: 1em 0;
+}
+
+.footer-login {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    background-color: #040514;
+    padding: 8px 12px;
+    border-radius: 4px; /* Rounded corners for the button */
+}
+
+.footer-login:hover {
+    background-color: #B9D9EB;
 }

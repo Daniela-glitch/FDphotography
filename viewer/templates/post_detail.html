@@ -1,25 +1,42 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<article>
-    <h2>{{ post.title }}</h2>
-    <div style="display: flex; align-items: center; justify-content: center;">
-        {% if post.image %}
-            <div style="margin-right: 20px;">
-                <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 300px; height: auto;">
-            </div>
-            <div>
-                <p>{{ post.content }}</p>
-                <button id="use-picture-button" data-post-id="{{ post.id }}">Use this picture</button>
-            </div>
-        {% endif %}
-    </div>
-</article>
+<link rel="stylesheet" type="text/css" href="{% static 'css/post.css' %}">
+
+<div class="post-wrapper">
+    <article>
+        <div class="post-container">
+            {% if post.image %}
+                <div class="post-image-container">
+                    <img class="post-image" src="{{ post.image.url }}" alt="{{ post.title }}">
+                </div>
+                <div class="post-info">
+                    <h2>{{ post.title }}</h2>
+                    <h2 class="price-heading">Price: {{ post.price }} USD</h2>
+                    <p>{{ post.content }}</p>
+                    <button id="use-picture-button" data-post-id="{{ post.id }}">Use this picture</button>
+                </div>
+            {% endif %}
+        </div>
+    </article>
+</div>
 
 <script type="text/javascript">
-    document.getElementById('use-picture-button').addEventListener('click', function() {
-        var postId = this.getAttribute('data-post-id');
-        window.location.href = `/create-checkout-session/?post_id=${postId}`;
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('use-picture-button').addEventListener('click', function() {
+            var postId = this.getAttribute('data-post-id');
+            // Redirect to the payment creation URL
+            window.location.href = `/payment/create/?post_id=${postId}`;
+        });
+
+        // Disable right-click on images to prevent downloading
+        document.querySelectorAll('.post-image').forEach(function(img) {
+            img.addEventListener('contextmenu', function(event) {
+                event.preventDefault(); // Disable right-click
+            });
+        });
     });
 </script>
+
 {% endblock %}

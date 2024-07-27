@@ -1,0 +1,13 @@
+.container {
+    text-align: center;
+}
+
+.blog-post {
+    display: inline-block;
+    text-align: left;
+    width: 60%;
+}
+
+.blog-post p {
+    text-align: left;
+}

@@ -1,8 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 <div class="container">
-  <h1>{{ 'Home' }}</h1>
-  <p>{{ 'Welcome to my site' }}</p>
+  <p></p>
 </div>
+
+<div class="slide-container">
+  {% for slide in slides %}
+    <div class="slide {% if forloop.first %}active{% endif %}">
+      <img src="{{ slide.image.url }}" alt="{{ slide.caption }}">
+    </div>
+  {% endfor %}
+  <button class="nav-button prev" onclick="prevSlide()">&#10094;</button>
+  <button class="nav-button next" onclick="nextSlide()">&#10095;</button>
+</div>
+
+<script src="{% static 'js/slides.js' %}"></script>
+<section class="hero">
+    <h2>Discover the Beauty of the Ordinary</h2>
+    <p>Explore the world through our lens and experience the art of photography in a new light.</p>
+</section>
+
+
 {% endblock %}
